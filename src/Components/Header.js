@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function Header() {
+const Header = () => {
   return (
     <div className="header">
       <div className="header_lft">
         <div className="logo">
           <a href="#">
-            <img src="images/logo.png" />
+            <img src="images/logo.png" alt=""/>
           </a>
         </div>
         <div className="navigatn">
@@ -33,7 +33,7 @@ export default function Header() {
       </div>
       <div className="header_rgt">
         <div className="flag_div">
-          <img src="images/flag.png" />
+          <img src="images/flag.png"alt=""/>
         </div>
         <input type="text" placeholder="Search" className="txt_box" />
         <div className="msg_box">
@@ -44,7 +44,7 @@ export default function Header() {
         <div className="info_div">
           <div className="image_div">
             {" "}
-            <img src="images/pic.png" />{" "}
+            <img src="images/pic.png" alt="" />{" "}
           </div>
           <div className="info_div1">Me</div>
         </div>
@@ -52,3 +52,5 @@ export default function Header() {
     </div>
   );
 }
+
+export default Header;

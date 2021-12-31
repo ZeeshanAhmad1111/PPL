@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function NavigationBar() {
+const NavigationBar = () => {
     return (
         <div className="navbar navbar-inverse navbar-fixed-top">
         <div className="navbar-inner">
@@ -20,7 +20,7 @@ export default function NavigationBar() {
             </a>
             <div className="pro_info pull-right">
               <div className="pro_icn">
-                <img src="images/pic_small.png" />
+                <img src="images/pic_small.png" alt="" />
               </div>
               <div className="pro_txt">
                 Me
@@ -80,3 +80,5 @@ export default function NavigationBar() {
       
     )
 }
+
+export default NavigationBar;

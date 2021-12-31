@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function SignUp() {
+const SignUp = () => {
   const navigate = useNavigate();
   const submit = async (e) => {
     e.preventDefault();
@@ -39,6 +39,7 @@ export default function SignUp() {
               type="text"
               name="userName"
               placeholder="Enter your username"
+              required
             />
           </li>
           <li>
@@ -47,11 +48,12 @@ export default function SignUp() {
               type="text"
               name="password"
               placeholder="Enter your password"
+              required
             />
           </li>
           <li>
             <span>Email</span>
-            <input type="text" name="email" placeholder="Enter your email" />
+            <input type="text" name="email" placeholder="Enter your email"required/>
           </li>
           <li>
             <span>First Name</span>
@@ -59,6 +61,7 @@ export default function SignUp() {
               type="text"
               name="firstName"
               placeholder="Enter your first name"
+              required
             />
           </li>
           <li>
@@ -67,10 +70,11 @@ export default function SignUp() {
               type="text"
               name="lastName"
               placeholder="Enter your last name"
+              required
             />
           </li>
           <li>
-            <input type="checkbox" />I agree to Term &amp; Conditions
+            <input type="checkbox"required/>I agree to Term &amp; Conditions
           </li>
           <li>
             <input type="submit" Value="Register" />
@@ -86,3 +90,5 @@ export default function SignUp() {
     </div>
   );
 }
+
+export default SignUp;

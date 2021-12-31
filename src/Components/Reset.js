@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export default function Reset() {
+const Reset = () => {
   const navigate = useNavigate();
   const submit = async (e) => {
     e.preventDefault();
@@ -44,6 +44,7 @@ export default function Reset() {
               type="text"
               name="newPassword"
               placeholder="Enter your new password"
+              required
             />
           </li>
           <li>
@@ -52,6 +53,7 @@ export default function Reset() {
               type="text"
               name="conPassword"
               placeholder="Enter your password again"
+              required
             />
           </li>
           <li>
@@ -62,3 +64,5 @@ export default function Reset() {
     </div>
   );
 }
+
+export default Reset;

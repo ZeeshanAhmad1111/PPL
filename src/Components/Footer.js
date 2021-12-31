@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Footer() {
+const Footer = () => {
   return (
     <div className="footr">
       <div className="footr_lft">
@@ -8,7 +8,7 @@ export default function Footer() {
           Copyright © Pet-Socail 2014 All Rights Reserved
         </div>
         <div className="footer_div2">
-          <a href="#">Privacy Policy </a>|{" "}
+          <a href="#">Privacy Policy </a>
           <a href="#"> Terms &amp; Conditions</a>
         </div>
       </div>
@@ -16,22 +16,22 @@ export default function Footer() {
         <ul>
           <li>
             <a href="#">
-              <img src="images/social_1.png" />
+              <img src="images/social_1.png" alt=""/>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="images/social_2.png" />
+              <img src="images/social_2.png" alt=""/>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="images/social_3.png" />
+              <img src="images/social_3.png" alt=""/>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="images/social_4.png" />
+              <img src="images/social_4.png" alt=""/>
             </a>
           </li>
         </ul>
@@ -39,3 +39,5 @@ export default function Footer() {
     </div>
   );
 }
+
+export default Footer;

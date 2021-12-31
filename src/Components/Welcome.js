@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Welcome() {
+const Welcome = () => {
   return (
     <>
       <h1>Welcome from PPL!</h1>
@@ -11,7 +11,10 @@ export default function Welcome() {
         going to use a passage of Lorem Ipsum, you need to be sure there isn't
         anything embarrassing hidden in the middle of text.{" "}
       </p>
-      <img src="images/img_9.png" alt />
+      {console.log("Welcome PAge")}
+      <img src="images/img_9.png" alt="" />
     </>
   );
 }
+
+export default Welcome;

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Login() {
+const Login = () => {
   const navigate = useNavigate();
   const submit = async (e) => {
     e.preventDefault();
@@ -40,7 +40,7 @@ export default function Login() {
         <ul>
           <li>
             <span>Email-ID</span>
-            <input type="text" name="email" placeholder="Enter your email" />
+            <input type="text" name="email" placeholder="Enter your email" required/>
           </li>
           <li>
             <span>Password</span>
@@ -48,10 +48,11 @@ export default function Login() {
               type="text"
               name="password"
               placeholder="Enter your password"
+              required
             />
           </li>
           <li>
-            <input type="checkbox" />
+            <input type="checkbox" required/>
             Remember Me
           </li>
           <li>
@@ -71,3 +72,5 @@ export default function Login() {
     </div>
   );
 }
+
+export default Login;

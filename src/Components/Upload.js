@@ -1,53 +1,38 @@
-import axios from "axios";
+import {useState} from "react";
+import UploadPost from "./UploadPost";
 
-export default function Upload() {
-  const submit = async (e) => {
-    e.preventDefault();
-    let formdata = new FormData(e.target);
-    console.log("FORMDATA----\n", formdata);
-    formdata.append("_id", localStorage.getItem("userId"));
-    await axios({
-      method: "POST",
-      data: formdata,
-      url: "http://localhost:3001/post/upload",
-      config: {
-        headers: {
-          "content-type": "multipart/form-data",
-        },
-      },
-    })
-      .then((res) => {
-        console.log("post details is send successfully from frontend");
-      })
-      .catch((err) => {
-        console.log("Post details is not send successfully from frontend");
-      });
-  };
+const Upload = () => {
+    const [flag, setFlag] = useState(false);
+    function handleClick(){
+      setFlag(flag?false:true);
+    }
   return (
-    <form onSubmit={submit}>
-      <ul>
-        <li>
-          <label>Title</label>
-          <input type="text" name="title" placeholder="Enter the title" />
-        </li>
-        <li>
-          <label>Category</label>
-          <select name="category">
-            <option value="cats">Cats</option>
-            <option value="dogs">Dogs</option>
-            <option value="birds">Birds</option>
-            <option value="rabbits">rabbits</option>
-            <option value="others">Others</option>
-          </select>
-        </li>
-        <li>
-          <label>Image:</label>
-          <input type="file" name="image" />
-        </li>
-        <li>
-          <input type="submit" Value="Upload Post" />
-        </li>
-      </ul>
-    </form>
+    <div>
+      <div className="rght_btn">
+        {" "}
+        <span className="rght_btn_icon">
+          <img src="images/btn_iconb.png" alt="up" />
+        </span>{" "}
+        <span className="btn_sep">
+          <img src="images/btn_sep.png" alt="sep" />
+        </span>{" "}
+        <a href="#" onClick={handleClick}>
+          Upload Post
+        </a>{" "}
+        <div>{flag ? <UploadPost /> : ""}</div>
+      </div>
+      <div className="rght_btn">
+        {" "}
+        <span className="rght_btn_icon">
+          <img src="images/btn_icona.png" alt="up" />
+        </span>{" "}
+        <span className="btn_sep">
+          <img src="images/btn_sep.png" alt="sep" />
+        </span>{" "}
+        <a href="#">Invite Friends</a>{" "}
+      </div>
+    </div>
   );
-}
+};
+
+export default Upload;

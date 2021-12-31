@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export default function Forgot() {
+const Forgot = () => {
   const navigate = useNavigate();
   const submit = async (e) => {
     e.preventDefault();
@@ -42,7 +42,7 @@ export default function Forgot() {
         <ul>
           <li>
             <span>Enter E-mail ID</span>
-            <input type="text" name="email" placeholder="User@gmail.com" />
+            <input type="text" name="email" placeholder="User@gmail.com"required/>
           </li>
           <li>
               <input type="submit" defaultValue="Submit" />
@@ -52,3 +52,5 @@ export default function Forgot() {
     </div>
   );
 }
+
+export default Forgot;
