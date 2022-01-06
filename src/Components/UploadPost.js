@@ -6,10 +6,17 @@ const UploadPost = () => {
     let formdata = new FormData(e.target);
     console.log("FORMDATA----\n", formdata);
     formdata.append("_id", localStorage.getItem("userId"));
+    var today = new Date();
+    var date =
+      today.toLocaleDateString();
+    var time =
+      today.toLocaleTimeString();
+    formdata.append("date", date);
+    formdata.append("time", time);
     await axios({
       method: "POST",
       data: formdata,
-      url: "http://localhost:3001/post/upload",
+      url: process.env.IP+"http://localhost:3001/post/upload",
       config: {
         headers: {
           "content-type": "multipart/form-data",
@@ -22,6 +29,7 @@ const UploadPost = () => {
       .catch((err) => {
         console.log("Post details is not send successfully from frontend");
       });
+    
   };
   return (
     <form onSubmit={submit}>

@@ -46,7 +46,7 @@ const Header = () => {
             {" "}
             <img src="images/pic.png" alt="" />{" "}
           </div>
-          <div className="info_div1">Me</div>
+          <div className="info_div1"><button onClick={() => localStorage.setItem("userId", null) }>Logout</button></div>
         </div>
       </div>
     </div>

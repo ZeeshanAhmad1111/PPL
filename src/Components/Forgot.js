@@ -11,7 +11,7 @@ const Forgot = () => {
     await axios({
       method: "POST",
       data: formdata,
-      url: "http://localhost:3001/user/forgot",
+      url: process.env.IP+"/user/forgot",
       config: {
         headers: {
           "content-type": "multipart/form-data",

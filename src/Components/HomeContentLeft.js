@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import Feed from "./Welcome";
-import Welcome from './Welcome';
+import React, { useState } from "react";
+import Feed from "./Feed";
+import Welcome from "./Welcome";
 
 const HomeContentLeft = () => {
+  const [posts, setPosts] = useState([]);
+  const[isLogin, setIsLogin] = useState(false);
 
-    const[isLogin, setIsLogin] = useState(false);
+  return (
+    <div>
+           {isLogin?<Welcome />:<Feed posts={posts} setPosts={setPosts} />}
+    </div>
+  );
+};
 
-    return (
-        <div>   
-            {isLogin?<Welcome />:<Feed />}
-        </div>
-    )
-}
-
-export default HomeContentLeft
+export default HomeContentLeft;

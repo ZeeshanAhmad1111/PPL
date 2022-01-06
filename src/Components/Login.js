@@ -6,11 +6,10 @@ const Login = () => {
   const submit = async (e) => {
     e.preventDefault();
     let formdata = new FormData(e.target);
-    console.log("FORMDATA----\n", formdata);
     await axios({
       method: "POST",
       data: formdata,
-      url: "http://localhost:3001/user/login",
+      url: process.env.IP+"/user/login",
       config: {
         headers: {
           "content-type": "multipart/form-data",
@@ -18,19 +17,17 @@ const Login = () => {
       },
     })
       .then((res) => {
-        console.log("log In details is send successfully from frontend");
         if (res.success === false) {
-          console.log(res.success);
-          alert("Wrong details entered");
+          alert(res.data);
           document.getElementById("login_form").reset();
         } else {
-          console.log(res.data.success, res.data.data[0]);
-          localStorage.setItem("userId", res.data.data[0]._id);
+          alert(res.message);
+          localStorage.setItem("userId", res.data.data.user_id);
           navigate("/feed");
         }
       })
       .catch((err) => {
-        console.log("Log In details is not send successfully from frontend");
+        console.log("Log In details is not send successfully from frontend>>>",err);
       });
   };
   return (
@@ -52,7 +49,7 @@ const Login = () => {
             />
           </li>
           <li>
-            <input type="checkbox" required/>
+            <input type="checkbox" />
             Remember Me
           </li>
           <li>

@@ -14,7 +14,7 @@ const Reset = () => {
       await axios({
         method: "POST",
         data: formdata,
-        url: "http://localhost:3001/user/reset",
+        url: process.env.IP+"/user/reset",
         config: {
           headers: {
             "content-type": "multipart/form-data",

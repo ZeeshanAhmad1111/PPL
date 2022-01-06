@@ -1,17 +1,20 @@
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import validation from "../Utils/Validation";
 
 const SignUp = () => {
   const navigate = useNavigate();
   const submit = async (e) => {
     e.preventDefault();
+    //const [userName, email, passWord, firstName, lastName] = e.target.name.value; 
+    // const errors = validation(e.target.userName.value);
+    // console.log(e.target.name.value);
+    // document.getElementById("err").innerHTML=errors;
     let formdata = new FormData(e.target);
-    console.log("FORMDATA----\n", formdata);
-
     await axios({
       method: "POST",
       data: formdata,
-      url: "http://localhost:3001/user/signup",
+      url: IP+"/user/signup",
       config: {
         headers: {
           "content-type": "multipart/form-data",
@@ -19,12 +22,11 @@ const SignUp = () => {
       },
     })
       .then((res) => {
-        console.log("Sign Up data is send from frontend");
-        console.log(res.data);
+        alert(res.data);
         navigate("/");
       })
       .catch((err) => {
-        console.log("Sign Up data is not send from frontend");
+        console.log("Sign Up data is not send from frontend>>>",err);
       });
   };
 
@@ -45,7 +47,7 @@ const SignUp = () => {
           <li>
             <span>Password</span>
             <input
-              type="text"
+              type="password"
               name="password"
               placeholder="Enter your password"
               required
@@ -53,7 +55,12 @@ const SignUp = () => {
           </li>
           <li>
             <span>Email</span>
-            <input type="text" name="email" placeholder="Enter your email"required/>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
           </li>
           <li>
             <span>First Name</span>
@@ -74,13 +81,14 @@ const SignUp = () => {
             />
           </li>
           <li>
-            <input type="checkbox"required/>I agree to Term &amp; Conditions
+            <input type="checkbox" required />I agree to Term &amp; Conditions
           </li>
           <li>
             <input type="submit" Value="Register" />
           </li>
         </ul>
       </form>
+      <div id="err"></div>
       <div className="addtnal_acnt">
         I already have an account.
         <Link to="/">
@@ -89,6 +97,6 @@ const SignUp = () => {
       </div>
     </div>
   );
-}
+};
 
 export default SignUp;

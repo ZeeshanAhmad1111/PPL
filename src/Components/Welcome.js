@@ -11,7 +11,6 @@ const Welcome = () => {
         going to use a passage of Lorem Ipsum, you need to be sure there isn't
         anything embarrassing hidden in the middle of text.{" "}
       </p>
-      {console.log("Welcome PAge")}
       <img src="images/img_9.png" alt="" />
     </>
   );
