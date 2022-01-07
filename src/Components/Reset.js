@@ -1,20 +1,20 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import {IP} from "../config";
 
 const Reset = () => {
+  //const { token } = useParams();
+
   const navigate = useNavigate();
   const submit = async (e) => {
     e.preventDefault();
-
     if (e.target.newPassword.value === e.target.conPassword.value) {
       let formdata = new FormData(e.target);
-      formdata.append('email', localStorage.getItem("emailId"));
-      console.log("FORMDATA----\n", formdata);
 
       await axios({
         method: "POST",
         data: formdata,
-        url: process.env.IP+"/user/reset",
+        url: IP+"/user/reset/",
         config: {
           headers: {
             "content-type": "multipart/form-data",
@@ -22,15 +22,14 @@ const Reset = () => {
         },
       })
         .then((res) => {
-          console.log("Reset details is send successfully from frontend");
           console.log(res.data);
           navigate("/");
         })
         .catch((err) => {
-          console.log("Reset details is not send successfully from frontend");
+          console.log("Reset details is not send successfully from frontend>>>", err);
         });
     } else {
-      alert("Password is not matching");
+      alert("New Password and Confirm Password is not matching");
     }
   };
   return (

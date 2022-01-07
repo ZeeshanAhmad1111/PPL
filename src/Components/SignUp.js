@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import validation from "../Utils/Validation";
+//import validation from "../Utils/Validation";
+import {IP} from "../config";
 
 const SignUp = () => {
   const navigate = useNavigate();

@@ -1,17 +1,16 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import {IP} from "../config";
+//import MailForgot from "./MailForgot";
 
 const Forgot = () => {
-  const navigate = useNavigate();
   const submit = async (e) => {
     e.preventDefault();
     let formdata = new FormData(e.target);
-    console.log("FORMDATA----\n", formdata);
 
     await axios({
       method: "POST",
       data: formdata,
-      url: process.env.IP+"/user/forgot",
+      url: IP+"/user/forgot",
       config: {
         headers: {
           "content-type": "multipart/form-data",
@@ -19,19 +18,16 @@ const Forgot = () => {
       },
     })
       .then((res) => {
-        console.log("Forgot details is send successfully from frontend");
-        if (res.data === "User Not Found") {
-          console.log(res.data);
-          alert("User not found");
+        if (res.data === "No User with this Email ID Exist") {
+          alert(res.data);
           document.getElementById("forgot_form").reset();
         } else {
-          console.log(res.data);
-          localStorage.setItem("emailId",e.target.email.value);
-          navigate("/reset");
+          alert(res.data.message);
+          localStorage.setItem("token",res.data.data);
         }
       })
       .catch((err) => {
-        console.log("Forgot details is not send successfully from frontend");
+        console.log("Forgot details is not send successfully from frontend",err);
       });
   };
 
@@ -49,6 +45,7 @@ const Forgot = () => {
           </li>
         </ul>
       </form>
+     {/* <div><MailForgot /></div> */}
     </div>
   );
 }

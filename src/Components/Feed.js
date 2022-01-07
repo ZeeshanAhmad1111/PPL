@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-
+import {IP} from "../config";
 
 const Feed = ({ posts, setPosts }) => {
   useEffect(() => {
     axios
-      .get(process.env.IP+"/post/posts")
+      .get(IP+"/post/posts")
       .then((jsonPost) => {
         setPosts(jsonPost.data);
         console.log(jsonPost.data);
@@ -36,7 +36,7 @@ const Feed = ({ posts, setPosts }) => {
               <li>
                 <a href="#">
                   <span className="list_img">
-                    <img src="images/img_1.png" />
+                    <img src="/images/img_1.png" />
                   </span>
                   Latest First
                 </a>
@@ -44,7 +44,7 @@ const Feed = ({ posts, setPosts }) => {
               <li>
                 <a href="#">
                   <span className="list_img">
-                    <img src="images/img_2.png" />
+                    <img src="/images/img_2.png" />
                   </span>
                   Oldest First
                 </a>
@@ -52,7 +52,7 @@ const Feed = ({ posts, setPosts }) => {
               <li>
                 <a href="#">
                   <span className="list_img">
-                    <img src="images/img_3.png" />
+                    <img src="/images/img_3.png" />
                   </span>
                   Most Pet
                 </a>
@@ -60,7 +60,7 @@ const Feed = ({ posts, setPosts }) => {
               <li>
                 <a href="#">
                   <span className="list_img">
-                    <img src="images/img_4.png" />
+                    <img src="/images/img_4.png" />
                   </span>
                   Most Clicks
                 </a>
@@ -68,7 +68,7 @@ const Feed = ({ posts, setPosts }) => {
               <li>
                 <a href="#">
                   <span className="list_img">
-                    <img src="images/img_5.png" />
+                    <img src="/images/img_5.png" />
                   </span>
                   Most Commented
                 </a>
@@ -78,7 +78,7 @@ const Feed = ({ posts, setPosts }) => {
           <div className="post_txt">4 New Post Updates</div>
         </div>
       </div> */}
-      {posts.map((post) => (
+      {posts.slice(0).reverse().map((post) => (
         <div className="contnt_2">
           <div className="div_a">
             <div className="div_title">{post.title}</div>
@@ -87,7 +87,7 @@ const Feed = ({ posts, setPosts }) => {
             </div>
             <div className="div_top">
               <div className="div_top_lft">
-                <img src="images/img_6.png"alt=""/>
+                <img src="/images/img_6.png"alt=""/>
                 {post.userName}
               </div>
               <div className="div_top_rgt">
@@ -104,7 +104,7 @@ const Feed = ({ posts, setPosts }) => {
                   <li>
                     <a href="#">
                       <span className="btn_icon">
-                        <img src="images/icon_001.png" alt="share" />
+                        <img src="/images/icon_001.png" alt="share" />
                       </span>
                       Share
                     </a>
@@ -112,7 +112,7 @@ const Feed = ({ posts, setPosts }) => {
                   <li>
                     <a href="#">
                       <span className="btn_icon">
-                        <img src="images/icon_002.png" alt="share" />
+                        <img src="/images/icon_002.png" alt="share" />
                       </span>
                       Flag
                     </a>
@@ -120,7 +120,7 @@ const Feed = ({ posts, setPosts }) => {
                   <li>
                     <a href="#">
                       <span className="btn_icon">
-                        <img src="images/icon_004.png" alt="share" />
+                        <img src="/images/icon_004.png" alt="share" />
                       </span>
                       4 Comments
                     </a>
@@ -128,7 +128,7 @@ const Feed = ({ posts, setPosts }) => {
                   <li>
                     <a href="#">
                       <span className="btn_icon">
-                        <img src="images/icon_003.png" alt="share" />
+                        <img src="/images/icon_003.png" alt="share" />
                       </span>
                       Likes
                     </a>
@@ -141,7 +141,7 @@ const Feed = ({ posts, setPosts }) => {
                   <li>
                     <a href="#">
                       <span className="btn_icon">
-                        <img src="images/icon_003.png" alt="share" />
+                        <img src="/images/icon_003.png" alt="share" />
                       </span>
                       Unlike
                     </a>

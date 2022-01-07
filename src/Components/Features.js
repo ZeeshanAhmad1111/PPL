@@ -10,7 +10,7 @@ const Features = () => {
         <div className="sub_dwn">
           <div className="feat_sec">
             <div className="feat_sec_img">
-              <img src="images/feat_img1.png" alt="" />
+              <img src="/images/feat_img1.png" alt="" />
             </div>
             <div className="feat_txt">Lorem Ipusum Text</div>
             <div className="btm_rgt">
@@ -19,7 +19,7 @@ const Features = () => {
           </div>
           <div className="feat_sec">
             <div className="feat_sec_img">
-              <img src="images/feat_img2.png" alt="" />
+              <img src="/images/feat_img2.png" alt="" />
             </div>
             <div className="feat_txt">Lorem Ipusum Text</div>
             <div className="btm_rgt">
@@ -28,7 +28,7 @@ const Features = () => {
           </div>
           <div className="feat_sec">
             <div className="feat_sec_img">
-              <img src="images/feat_img3.png" alt="" />
+              <img src="/images/feat_img3.png" alt="" />
             </div>
             <div className="feat_txt">Lorem Ipusum Text</div>
             <div className="btm_rgt">

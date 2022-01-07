@@ -1,4 +1,5 @@
 import axios from "axios";
+import {IP} from "../config";
 
 const UploadPost = () => {
   const submit = async (e) => {
@@ -16,7 +17,7 @@ const UploadPost = () => {
     await axios({
       method: "POST",
       data: formdata,
-      url: process.env.IP+"http://localhost:3001/post/upload",
+      url: IP+"/post/upload",
       config: {
         headers: {
           "content-type": "multipart/form-data",

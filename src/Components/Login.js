@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import {IP} from "../config";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const Login = () => {
     await axios({
       method: "POST",
       data: formdata,
-      url: process.env.IP+"/user/login",
+      url: IP+"/user/login",
       config: {
         headers: {
           "content-type": "multipart/form-data",
@@ -17,12 +18,12 @@ const Login = () => {
       },
     })
       .then((res) => {
-        if (res.success === false) {
-          alert(res.data);
+        if (res.data.success === false) {
+          alert(res.data.data);
           document.getElementById("login_form").reset();
         } else {
-          alert(res.message);
-          localStorage.setItem("userId", res.data.data.user_id);
+          alert(res.data.message);
+          localStorage.setItem("token", res.data.data);
           navigate("/feed");
         }
       })

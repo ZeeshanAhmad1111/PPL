@@ -26,7 +26,7 @@ const App = () => {
                 <Route path="/" element={<LoginPage />} />
                 <Route path="/forgot" element={<ForgotPage />} />
                 <Route path="/signup" element={<SignUpPage />} />
-                <Route path="/reset" element={<ResetPage />} />
+                <Route path="/reset/:token" element={<ResetPage />} />
                 <Route path="/feed" element={<HomePage />} />
               </Routes>
             </div>

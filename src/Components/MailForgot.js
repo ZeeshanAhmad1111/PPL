@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const MailForgot = () => {
   return (
@@ -12,7 +11,7 @@ const MailForgot = () => {
         </div>
         <div className="man_contnt">
           <span>Please Check Your Mail Box!</span>
-          <Link to="/"><input type="submit" Value="OK" /></Link>
+          <input type="submit" Value="OK" />
         </div>
       </div>
   );
