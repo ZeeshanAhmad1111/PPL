@@ -20,7 +20,7 @@ const NavigationBar = () => {
             </a>
             <div className="pro_info pull-right">
               <div className="pro_icn">
-                <img src="images/pic_small.png" alt="" />
+                <img src="/images/pic_small.png" alt="" />
               </div>
               <div className="pro_txt">
                 Me

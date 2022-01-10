@@ -16,22 +16,22 @@ const Footer = () => {
         <ul>
           <li>
             <a href="#">
-              <img src="images/social_1.png" alt=""/>
+              <img src="/images/social_1.png" alt=""/>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="images/social_2.png" alt=""/>
+              <img src="/images/social_2.png" alt=""/>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="images/social_3.png" alt=""/>
+              <img src="/images/social_3.png" alt=""/>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="images/social_4.png" alt=""/>
+              <img src="/images/social_4.png" alt=""/>
             </a>
           </li>
         </ul>

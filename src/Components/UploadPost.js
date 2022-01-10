@@ -6,7 +6,7 @@ const UploadPost = () => {
     e.preventDefault();
     let formdata = new FormData(e.target);
     console.log("FORMDATA----\n", formdata);
-    formdata.append("_id", localStorage.getItem("userId"));
+    formdata.append("token", localStorage.getItem("token"));
     var today = new Date();
     var date =
       today.toLocaleDateString();

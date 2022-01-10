@@ -96,7 +96,7 @@ const Feed = ({ posts, setPosts }) => {
               </div>
             </div>
             <div className="div_image">
-              <img src={"http://localhost:3001/"+post.image} alt="pet" />
+              <img src={IP+"/"+post.image} alt="pet" />
             </div>
             <div className="div_btm">
               <div className="btm_list">
