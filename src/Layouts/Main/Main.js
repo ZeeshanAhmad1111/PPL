@@ -7,6 +7,7 @@ import Forgot from "../../Pages/Forgot";
 import SignUp from "../../Pages/SignUp";
 import Reset from "../../Pages/Reset";
 import HomeContentRight from "../../Pages/HomeContentRight";
+import Error404 from "../../Pages/Error404";
 import { CustomRoute } from "../../Routes/navigation";
 
 const Main = () => {
@@ -17,10 +18,32 @@ const Main = () => {
       <div className="container">
         <div className="content">
           <Router>
+            <Routes>
+              <Route
+                path="*"
+                element={<CustomRoute commonRoute={<Error404 />} />}
+              />
+            </Routes>
             <div className="content_lft">
               <Routes>
                 <Route
                   path="/"
+                  element={<CustomRoute commonRoute={<Welcome />} />}
+                />
+                <Route
+                  path="/signup"
+                  element={<CustomRoute commonRoute={<Welcome />} />}
+                />
+                <Route
+                  path="/forgot"
+                  element={<CustomRoute commonRoute={<Welcome />} />}
+                />
+                <Route
+                  path="/reset/:token"
+                  element={<CustomRoute commonRoute={<Welcome />} />}
+                />
+                <Route
+                  path="/feed"
                   element={
                     <CustomRoute
                       isLoggedIn={isLogin}
@@ -34,19 +57,21 @@ const Main = () => {
             <div className="content_rgt">
               <Routes>
                 <Route
-                  path="/signup"
+                  path="/"
                   element={
                     <CustomRoute
-                      publicRoute={<SignUp />}
+                      isLoggedIn={isLogin}
+                      publicRoute={<Login />}
                       privateRoute={<HomeContentRight />}
                     />
                   }
                 />
                 <Route
-                  path="/"
+                  path="/signup"
                   element={
                     <CustomRoute
-                      publicRoute={<Login />}
+                      isLoggedIn={isLogin}
+                      publicRoute={<SignUp />}
                       privateRoute={<HomeContentRight />}
                     />
                   }
@@ -55,6 +80,7 @@ const Main = () => {
                   path="/forgot"
                   element={
                     <CustomRoute
+                      isLoggedIn={isLogin}
                       publicRoute={<Forgot />}
                       privateRoute={<HomeContentRight />}
                     />
@@ -64,14 +90,21 @@ const Main = () => {
                   path="/reset/:token"
                   element={
                     <CustomRoute
+                      isLoggedIn={isLogin}
                       publicRoute={<Reset />}
                       privateRoute={<HomeContentRight />}
                     />
                   }
                 />
                 <Route
-                  path="*"
-                  element={<CustomRoute commonRoute={<Login />} />}
+                  path="/feed"
+                  element={
+                    <CustomRoute
+                      isLoggedIn={isLogin}
+                      publicRoute={<Login />}
+                      privateRoute={<HomeContentRight />}
+                    />
+                  }
                 />
               </Routes>
             </div>
