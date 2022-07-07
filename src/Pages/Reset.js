@@ -1,6 +1,6 @@
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
-import {IP} from "../config";
+import { useNavigate } from "react-router-dom";
+import { IP } from "../Config/config";
 
 const Reset = () => {
   //const { token } = useParams();
@@ -14,7 +14,7 @@ const Reset = () => {
       await axios({
         method: "POST",
         data: formdata,
-        url: IP+"/user/reset/",
+        url: IP + "/user/reset/",
         config: {
           headers: {
             "content-type": "multipart/form-data",
@@ -26,7 +26,10 @@ const Reset = () => {
           navigate("/");
         })
         .catch((err) => {
-          console.log("Reset details is not send successfully from frontend>>>", err);
+          console.log(
+            "Reset details is not send successfully from frontend>>>",
+            err
+          );
         });
     } else {
       alert("New Password and Confirm Password is not matching");
@@ -62,6 +65,6 @@ const Reset = () => {
       </form>
     </div>
   );
-}
+};
 
 export default Reset;

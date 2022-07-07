@@ -1,5 +1,5 @@
 import axios from "axios";
-import {IP} from "../config";
+import { IP } from "../Config/config";
 //import MailForgot from "./MailForgot";
 
 const Forgot = () => {
@@ -10,7 +10,7 @@ const Forgot = () => {
     await axios({
       method: "POST",
       data: formdata,
-      url: IP+"/user/forgot",
+      url: IP + "/user/forgot",
       config: {
         headers: {
           "content-type": "multipart/form-data",
@@ -23,11 +23,14 @@ const Forgot = () => {
           document.getElementById("forgot_form").reset();
         } else {
           alert(res.data.message);
-          localStorage.setItem("token",res.data.data);
+          localStorage.setItem("token", res.data.data);
         }
       })
       .catch((err) => {
-        console.log("Forgot details is not send successfully from frontend",err);
+        console.log(
+          "Forgot details is not send successfully from frontend",
+          err
+        );
       });
   };
 
@@ -38,16 +41,21 @@ const Forgot = () => {
         <ul>
           <li>
             <span>Enter E-mail ID</span>
-            <input type="text" name="email" placeholder="User@gmail.com"required/>
+            <input
+              type="text"
+              name="email"
+              placeholder="User@gmail.com"
+              required
+            />
           </li>
           <li>
-              <input type="submit" defaultValue="Submit" />
+            <input type="submit" defaultValue="Submit" />
           </li>
         </ul>
       </form>
-     {/* <div><MailForgot /></div> */}
+      {/* <div><MailForgot /></div> */}
     </div>
   );
-}
+};
 
 export default Forgot;

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import {IP} from "../config";
+import { IP } from "../Config/config";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ const Login = () => {
     await axios({
       method: "POST",
       data: formdata,
-      url: IP+"/user/login",
+      url: IP + "/user/login",
       config: {
         headers: {
           "content-type": "multipart/form-data",
@@ -28,7 +28,10 @@ const Login = () => {
         }
       })
       .catch((err) => {
-        console.log("Log In details is not send successfully from frontend>>>",err);
+        console.log(
+          "Log In details is not send successfully from frontend>>>",
+          err
+        );
       });
   };
   return (
@@ -38,7 +41,12 @@ const Login = () => {
         <ul>
           <li>
             <span>Email-ID</span>
-            <input type="text" name="email" placeholder="Enter your email" required/>
+            <input
+              type="text"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
           </li>
           <li>
             <span>Password</span>
@@ -69,6 +77,6 @@ const Login = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Login;

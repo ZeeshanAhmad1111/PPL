@@ -1,13 +1,13 @@
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 //import validation from "../Utils/Validation";
-import {IP} from "../config";
+import { IP } from "../Config/config";
 
 const SignUp = () => {
   const navigate = useNavigate();
   const submit = async (e) => {
     e.preventDefault();
-    //const [userName, email, passWord, firstName, lastName] = e.target.name.value; 
+    //const [userName, email, passWord, firstName, lastName] = e.target.name.value;
     // const errors = validation(e.target.userName.value);
     // console.log(e.target.name.value);
     // document.getElementById("err").innerHTML=errors;
@@ -15,7 +15,7 @@ const SignUp = () => {
     await axios({
       method: "POST",
       data: formdata,
-      url: IP+"/user/signup",
+      url: IP + "/user/signup",
       config: {
         headers: {
           "content-type": "multipart/form-data",
@@ -27,7 +27,7 @@ const SignUp = () => {
         navigate("/");
       })
       .catch((err) => {
-        console.log("Sign Up data is not send from frontend>>>",err);
+        console.log("Sign Up data is not send from frontend>>>", err);
       });
   };
 

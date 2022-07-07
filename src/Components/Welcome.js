@@ -9,11 +9,11 @@ const Welcome = () => {
         majority have suffered alteration in some form, by injected humour, or
         randomised words which don't look even slightly believable. If you are
         going to use a passage of Lorem Ipsum, you need to be sure there isn't
-        anything embarrassing hidden in the middle of text.{" "}
+        anything embarrassing hidden in the middle of text.
       </p>
       <img src="/images/img_9.png" alt="" />
     </>
   );
-}
+};
 
 export default Welcome;

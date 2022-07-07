@@ -1,5 +1,5 @@
 import axios from "axios";
-import {IP} from "../config";
+import { IP } from "../Config/config";
 
 const UploadPost = () => {
   const submit = async (e) => {
@@ -8,16 +8,14 @@ const UploadPost = () => {
     console.log("FORMDATA----\n", formdata);
     formdata.append("token", localStorage.getItem("token"));
     var today = new Date();
-    var date =
-      today.toLocaleDateString();
-    var time =
-      today.toLocaleTimeString();
+    var date = today.toLocaleDateString();
+    var time = today.toLocaleTimeString();
     formdata.append("date", date);
     formdata.append("time", time);
     await axios({
       method: "POST",
       data: formdata,
-      url: IP+"/post/upload",
+      url: IP + "/post/upload",
       config: {
         headers: {
           "content-type": "multipart/form-data",
@@ -30,14 +28,18 @@ const UploadPost = () => {
       .catch((err) => {
         console.log("Post details is not send successfully from frontend");
       });
-    
   };
   return (
     <form onSubmit={submit}>
       <ul>
         <li>
           <label>Title</label>
-          <input type="text" name="title" placeholder="Enter the title"required/>
+          <input
+            type="text"
+            name="title"
+            placeholder="Enter the title"
+            required
+          />
         </li>
         <li>
           <label>Category</label>
@@ -51,7 +53,7 @@ const UploadPost = () => {
         </li>
         <li>
           <label>Image:</label>
-          <input type="file" name="image" required/>
+          <input type="file" name="image" required />
         </li>
         <li>
           <input type="submit" Value="Upload Post" />
@@ -59,6 +61,6 @@ const UploadPost = () => {
       </ul>
     </form>
   );
-}
+};
 
 export default UploadPost;

@@ -1,7 +1,7 @@
 import React from "react";
-import Upload from "./Upload";
-import Categories from "./Categories";
-import Features from "./Features";
+import Upload from "../Components/Upload";
+import Categories from "../Components/Categories";
+import Features from "../Components/Features";
 
 const HomeContentRight = () => {
 

@@ -13,7 +13,7 @@ const Categories = () => {
               <a href="#">
                 <span className="list_icon">
                   <img src="/images/icon_01.png" alt="up" />
-                </span>{" "}
+                </span>
                 CATS
               </a>
             </li>
@@ -21,7 +21,7 @@ const Categories = () => {
               <a href="#">
                 <span className="list_icon">
                   <img src="/images/icon_02.png" alt="up" />
-                </span>{" "}
+                </span>
                 Dogs
               </a>
             </li>
@@ -29,7 +29,7 @@ const Categories = () => {
               <a href="#">
                 <span className="list_icon">
                   <img src="/images/icon_03.png" alt="up" />
-                </span>{" "}
+                </span>
                 Birds
               </a>
             </li>
@@ -37,7 +37,7 @@ const Categories = () => {
               <a href="#">
                 <span className="list_icon">
                   <img src="/images/icon_04.png" alt="up" />
-                </span>{" "}
+                </span>
                 Rabbit
               </a>
             </li>
@@ -45,7 +45,7 @@ const Categories = () => {
               <a href="#">
                 <span className="list_icon">
                   <img src="/images/icon_05.png" alt="up" />
-                </span>{" "}
+                </span>
                 Others
               </a>
             </li>
@@ -54,6 +54,6 @@ const Categories = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Categories;
